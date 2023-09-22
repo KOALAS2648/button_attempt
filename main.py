@@ -26,14 +26,9 @@ window.blit(koala_image, logo.coords)
 money = 0
 money_power = 1
 upgrade_cost_power = 1.15
-upradge_pice = 10
+upradge_pice = 10 
 def calculate_distance(coord1:tuple, coord2:tuple):
-    x1 = coord1[0]
-    y1 = coord1[1]
-    x2 = coord2[0] 
-    y2 = coord2[1]
-    res = math.sqrt((x2-x1)**2 + (y2-y1)**2)
-    return round(res)
+    return round(math.sqrt((coord2[0]-coord1[0])**2 + (coord2[1]-coord1[1])))
 
 fontSize = 40
 font = pg.font.SysFont('Sans serif', fontSize)
