@@ -28,7 +28,7 @@ money_power = 1
 upgrade_cost_power = 1.15
 upradge_pice = 10 
 def calculate_distance(coord1:tuple, coord2:tuple):
-    return round(math.sqrt((coord2[0]-coord1[0])**2 + (coord2[1]-coord1[1])))
+    return round(math.sqrt((coord2[0]-coord1[0])**2 + (coord2[1]-coord1[1])**2))
 
 fontSize = 40
 font = pg.font.SysFont('Sans serif', fontSize)
@@ -37,6 +37,7 @@ def draw_text(text,x,y,color):
   window.blit(label, (x,y))
 RUN = True
 def main():
+    global RUN, money_power, money, upradge_pice
     while RUN:
         mouse_pos = pg.mouse.get_pos()
         window.blit(koala_image, logo.coords)
@@ -67,3 +68,6 @@ def main():
         pg.display.flip()
         window.fill((255, 255, 255))
         window.blit(text_box_surface, test_box.coords)
+
+if __name__ == "__main__": 
+    main()
