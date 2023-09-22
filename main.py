@@ -5,6 +5,8 @@ import logo
 pg.init()
 WIN, HEI = 1080,800
 
+clock = pg.time.Clock()
+FPS = 60
 window = pg.display.set_mode((WIN, HEI))
 clicky_button = Button("money_click", ((WIN/2)-25, (HEI/2)-25), (50, 50))
 clicky_button_surface = pg.Surface(clicky_button.size)
@@ -62,12 +64,12 @@ def main():
                 upradge_pice *= upgrade_cost_power
                 upradge_pice = round(upradge_pice)
 
-        # pg.display.set_caption("python clicker game")
-        pg.display.set_caption(str(upradge_pice))
+        pg.display.set_caption("python clicker game")
+        #pg.display.set_caption(str(upradge_pice))
         
         pg.display.flip()
         window.fill((255, 255, 255))
         window.blit(text_box_surface, test_box.coords)
-
+        clock.tick(FPS)
 if __name__ == "__main__": 
     main()
