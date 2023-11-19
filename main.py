@@ -16,10 +16,6 @@ power_up_button = Button("power_up", ((WIN/2 )+50, (HEI/2)-25), (50, 50))
 power_surface = pg.Surface(power_up_button.size)
 power_surface.fill((0,255,255))
 
-test_box = Button("test_box", (power_up_button.coords[0]+25, power_up_button.coords[1]+25), (5,5))
-text_box_surface = pg.Surface(test_box.size)
-text_box_surface.fill((0,0,0))
-
 logo = logo.Logo(((WIN/2)-25, 50), (25, 25), "pictures/koala.png")
 koala_image = pg.image.load(logo.image_path)
 koala_image = pg.transform.scale(koala_image, (150,150))
@@ -69,7 +65,7 @@ def main():
         
         pg.display.flip()
         window.fill((255, 255, 255))
-        window.blit(text_box_surface, test_box.coords)
+        
         clock.tick(FPS)
 if __name__ == "__main__": 
     main()
